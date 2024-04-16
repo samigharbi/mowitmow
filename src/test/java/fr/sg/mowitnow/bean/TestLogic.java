@@ -1,4 +1,4 @@
-package fr.sg.mowitnow;
+package fr.sg.mowitnow.bean;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
+import fr.sg.mowitmow.SpringBatchApplication;
 import fr.sg.mowitmow.bean.Command;
 import fr.sg.mowitmow.bean.Direction;
 import fr.sg.mowitmow.bean.GardenLimit;
@@ -14,8 +16,9 @@ import fr.sg.mowitmow.bean.Mower;
 import fr.sg.mowitmow.bean.Position;
 import fr.sg.mowitmow.exception.InitialPositionMowerInvalidException;
 
+@SpringBootTest(classes = { SpringBatchApplication.class })
 public class TestLogic {
-	
+
 	@Test
 	public void testProcess() throws InitialPositionMowerInvalidException {
 		GardenLimit gardenLimit = new GardenLimit(5, 5);
